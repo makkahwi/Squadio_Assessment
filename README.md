@@ -15,3 +15,13 @@ Notes:
 
 - Make a github repository has the task
 - Make sure your commits are descriptive and has small changes
+
+## TODO List
+
+- Build API Call            DONE
+- Build User Inputs Form    DONE
+- Build CandleStick Chart   DONE
+- Fix API Data Call
+- Fix Styling
+- Include Task Description & Checklist in UI
+- Include Chart Pickup Reason in Description
