@@ -2,9 +2,11 @@ import axios from 'axios';
 import { useLayoutEffect, useState } from 'react';
 import './App.css';
 import logo from './logo.svg';
+import ReactApexChart from "react-apexcharts";
+import chartTestData from './testData';
 
 function App() {
-  const [chartData, setChartData] = useState([]);
+  const [chartData, setChartData] = useState(chartTestData);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ interval: "", from: "", to: "" });
 
@@ -48,10 +50,39 @@ function App() {
     getChartData();
   };
 
+  const series = [
+    {
+      name: "candle",
+      data: chartData
+    }
+  ];
+
+  const options = {
+    chart: {
+      type: "candlestick"
+    },
+    xaxis: {
+      type: "category",
+      //tickPlacement: 'between',
+    },
+    yaxis: {
+      legend: {
+        title: "dan"
+      }
+    },
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="candlestick"
+          height={350}
+        />
 
         <form onSubmit={onSubmit}>
           <div>
