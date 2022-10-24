@@ -21,7 +21,8 @@ Notes:
 - Build API Call            DONE
 - Build User Inputs Form    DONE
 - Build CandleStick Chart   DONE
+- Deploy To Vercel          DONE
 - Fix API Data Call
-- Fix Styling
+- Fix UI (Header / Project Title / Body Split To Columns / Responsivness / Styling)
 - Include Task Description & Checklist in UI
 - Include Chart Pickup Reason in Description
