@@ -5,6 +5,7 @@ import logo from './logo.svg';
 
 function App() {
   const [chartData, setChartData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const ticker = "SPUS"
   const from_timestamp = new Date("2022-01-01")
@@ -12,6 +13,8 @@ function App() {
   const interval = "1mo"
 
   const getData = async () => {
+    setLoading(true);
+
     await axios.get(`https://query1.finance.yahoo.com/v7/finance/download/${ticker}?period1=${from_timestamp}&period2=${to_timestamp}&interval=${interval}&events=history`)
       .then(({ data }) => {
         console.log({ data });
@@ -19,6 +22,9 @@ function App() {
       })
       .catch(error => {
         console.log({ error })
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
