@@ -15,23 +15,25 @@ Notes:
 
 - Make a github repository has the task
 - Make sure your commits are descriptive and has small changes
+- <https://blog.apilayer.com/yahoo-finance-api-is-discontinued-here-is-your-top-10-yahoo-finance-api-alternatives/>
 
 ## TODO List
 
-- Build API Call            DONE
-- Build User Inputs Form    DONE
-- Build CandleStick Chart   DONE
-- Deploy To Vercel          DONE
-- Fix API Data Call
+- Build API Call                        DONE
+- Build User Inputs Form                DONE
+- Build CandleStick Chart               DONE
+- Deploy To Vercel                      DONE
+- Fix API Data Call                     TURNED AROUND
 - Fix UI
-  - Header                  DONE
-  - Project Title           DONE
-  - Body Split To Columns   DONE
+  - Header                              DONE
+  - Project Title                       DONE
+  - Body Split To Columns               DONE
   - Responsivness
-  - Styling                 DONE
-- Turn Into Multi-Page App
-  - React-Router-Dom
-  - Layout Files
-  - Header Nav
-- Include Task Description & Checklist in UI (About Page)
-- Include Chart Pickup Reason in Description
+  - Styling                             DONE
+- Turn Into Multi-Page App              DONE
+  - React-Router-Dom                    DONE
+  - Layout Files                        DONE
+  - Header Nav                          DONE
+- Include Task Description              DONE
+- Include Checklist in UI (About Page)  DONE
+- Include Chart Pickup Reason           DONE
