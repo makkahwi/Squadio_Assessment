@@ -8,7 +8,7 @@ import chartTestData from "../testData";
 export default function Home() {
   const [chartData, setChartData] = useState(chartTestData);
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({ interval: "", from: "", to: "" });
+  const [formData, setFormData] = useState({ interval: "1d", from: "", to: "" });
 
   const ticker = "SPUS"
 
@@ -45,9 +45,23 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-light text-center min-vh-75 d-flex justify-content-center py-5 mt-5">
+    <div className="bg-light text-center min-vh-75 d-flex justify-content-center py-5 mt-3">
       <div className="col-10">
         <div className="row mt-5 justify-content-around">
+          <div className="col-lg-10 pb-4">
+            <p>
+              {("Illustration of User Inputs")}
+              <br />
+              <small className="text-danger text-xs">
+                {("As API URL isn't working, please check the about page for details")}
+              </small>
+            </p>
+
+            <p>
+              {JSON.stringify(formData)}
+            </p>
+          </div>
+
           <div className="col-lg-5">
             <Chart
               data={chartData}
