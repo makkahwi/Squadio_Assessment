@@ -49,7 +49,7 @@ export default function App() {
     <div className="bg-light text-center min-vh-100">
       <Header />
 
-      <body className="bg-light d-flex justify-content-center">
+      <div className="bg-light d-flex justify-content-center">
         <div className="col-10">
           <div className="row mt-5 justify-content-around">
             <div className="col-lg-5">
@@ -68,7 +68,7 @@ export default function App() {
             </div>
           </div>
         </div>
-      </body>
+      </div>
 
       <Footer />
     </div>
