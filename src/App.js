@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useLayoutEffect, useState } from "react";
-import ReactApexChart from "react-apexcharts";
+import Chart from "./Components/Chart";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import InputForm from "./Components/InputForm";
 import chartTestData from "./testData";
 
 export default function App() {
@@ -32,12 +33,6 @@ export default function App() {
     getChartData()
   }, []);
 
-  const intervalOptions = [
-    { value: "1d", label: "1 Day" },
-    { value: "1wk", label: "1 Week" },
-    { value: "1mo", label: "1 Month" },
-  ];
-
   const onChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -50,28 +45,6 @@ export default function App() {
     getChartData();
   };
 
-  const series = [
-    {
-      name: "candle",
-      data: chartData
-    }
-  ];
-
-  const options = {
-    // chart: {
-    //   type: "candlestick"
-    // },
-    // xaxis: {
-    //   type: "category",
-    //   //tickPlacement: "between",
-    // },
-    // yaxis: {
-    //   legend: {
-    //     title: "dan"
-    //   }
-    // },
-  };
-
   return (
     <div className="text-center min-vh-100">
       <Header />
@@ -81,74 +54,16 @@ export default function App() {
 
           <div className="row mt-5 justify-content-around">
             <div className="col-lg-5">
-              <ReactApexChart
-                options={options}
-                series={series}
-                type="candlestick"
-                height={350}
-              />
+              <Chart data={chartData} />
             </div>
 
             <div className="col-lg-5">
-              <form onSubmit={onSubmit}>
-                <div className="form-group my-2">
-                  <label>
-                    {("Interval")}
-                  </label>
-
-                  <select
-                    name="interval"
-                    placeholder="Interval"
-                    value={formData.interval}
-                    onChange={onChange}
-                    className="form-control"
-                  >
-                    {intervalOptions.map(({ value, label }, i) => (
-                      <option key={i} value={value} label={label} />
-                    ))}
-                  </select>
-                </div>
-
-                <div className="row my-2">
-                  <label>
-                    {("Date Range")}
-                  </label>
-
-                  <div className="col">
-                    <label>
-                      {("From")}
-                    </label>
-
-                    <input
-                      type="date"
-                      name="from"
-                      placeholder="From"
-                      value={formData.from}
-                      onChange={onChange}
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="col">
-                    <label>
-                      {("To")}
-                    </label>
-
-                    <input
-                      type="date"
-                      name="to"
-                      placeholder="To"
-                      value={formData.to}
-                      onChange={onChange}
-                      className="form-control"
-                    />
-                  </div>
-                </div>
-
-                <button type="submit" disabled={loading} className="btn btn-success my-2 w-100">
-                  {("Get Data")}
-                </button>
-              </form>
+              <InputForm
+                formData={formData}
+                loading={loading}
+                onChange={onChange}
+                onSubmit={onSubmit}
+              />
             </div>
           </div>
         </div>
