@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 
 export default function Header() {
+  const location = useLocation();
+  const { pathname } = location;
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-success justify-content-between fixed-top">
         <h5 className="my-3 navbar-brand mx-4">
           {("Yahoo Finance Data")}
         </h5>
@@ -15,13 +19,13 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto mx-4">
             <li className="nav-item active">
-              <Link to="" className="nav-link" >
+              <Link to="" className={`nav-link ${pathname === "" && "text-danger"}`} >
                 {("Home")}
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link to="about" className="nav-link" >
+              <Link to="about" className={`nav-link ${pathname === "about" && "text-danger"}`} >
                 {("About")}
               </Link>
             </li>

@@ -45,27 +45,25 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-light text-center min-vh-100">
-      <div className="bg-light d-flex justify-content-center">
-        <div className="col-10">
-          <div className="row mt-5 justify-content-around">
-            <div className="col-lg-5">
-              <Chart
-                data={chartData}
-              />
-            </div>
+    <div className="bg-light text-center min-vh-75 d-flex justify-content-center py-5 mt-5">
+      <div className="col-10">
+        <div className="row mt-5 justify-content-around">
+          <div className="col-lg-5">
+            <Chart
+              data={chartData}
+            />
+          </div>
 
-            <div className="col-lg-5">
-              <InputForm
-                formData={formData}
-                loading={loading}
-                onChange={onChange}
-                onSubmit={onSubmit}
-              />
-            </div>
+          <div className="col-lg-5">
+            <InputForm
+              formData={formData}
+              loading={loading}
+              onChange={onChange}
+              onSubmit={onSubmit}
+            />
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
