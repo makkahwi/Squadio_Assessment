@@ -23,6 +23,15 @@ Notes:
 - Build CandleStick Chart   DONE
 - Deploy To Vercel          DONE
 - Fix API Data Call
-- Fix UI (Header / Project Title / Body Split To Columns / Responsivness / Styling)
-- Include Task Description & Checklist in UI
+- Fix UI
+  - Header                  DONE
+  - Project Title           DONE
+  - Body Split To Columns   DONE
+  - Responsivness
+  - Styling                 DONE
+- Turn Into Multi-Page App
+  - React-Router-Dom
+  - Layout Files
+  - Header Nav
+- Include Task Description & Checklist in UI (About Page)
 - Include Chart Pickup Reason in Description

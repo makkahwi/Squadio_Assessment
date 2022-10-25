@@ -1,11 +1,12 @@
-import axios from 'axios';
-import { useLayoutEffect, useState } from 'react';
-import './App.css';
-import logo from './logo.svg';
-import ReactApexChart from "react-apexcharts";
-import chartTestData from './testData';
+import axios from "axios";
+import { useLayoutEffect, useState } from "react";
+import Chart from "./Components/Chart";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import InputForm from "./Components/InputForm";
+import chartTestData from "./testData";
 
-function App() {
+export default function App() {
   const [chartData, setChartData] = useState(chartTestData);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ interval: "", from: "", to: "" });
@@ -32,12 +33,6 @@ function App() {
     getChartData()
   }, []);
 
-  const intervalOptions = [
-    { value: "1d", label: "1 Day" },
-    { value: "1wk", label: "1 Week" },
-    { value: "1mo", label: "1 Month" },
-  ];
-
   const onChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -50,86 +45,32 @@ function App() {
     getChartData();
   };
 
-  const series = [
-    {
-      name: "candle",
-      data: chartData
-    }
-  ];
-
-  const options = {
-    chart: {
-      type: "candlestick"
-    },
-    xaxis: {
-      type: "category",
-      //tickPlacement: 'between',
-    },
-    yaxis: {
-      legend: {
-        title: "dan"
-      }
-    },
-  };
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="bg-light text-center min-vh-100">
+      <Header />
 
-        <ReactApexChart
-          options={options}
-          series={series}
-          type="candlestick"
-          height={350}
-        />
+      <div className="bg-light d-flex justify-content-center">
+        <div className="col-10">
+          <div className="row mt-5 justify-content-around">
+            <div className="col-lg-5">
+              <Chart
+                data={chartData}
+              />
+            </div>
 
-        <form onSubmit={onSubmit}>
-          <div>
-            <label>
-              {("Interval")}
-            </label>
-
-            <select name="interval" value={formData.interval} onChange={onChange}>
-              {intervalOptions.map(({ value, label }, i) => (
-                <option key={i} value={value} label={label} />
-              ))}
-            </select>
+            <div className="col-lg-5">
+              <InputForm
+                formData={formData}
+                loading={loading}
+                onChange={onChange}
+                onSubmit={onSubmit}
+              />
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div>
-            <label>
-              {("Date Range")}
-            </label>
-
-            <label>
-              {("From")}
-            </label>
-            <input
-              type="date"
-              name="from"
-              value={formData.from}
-              onChange={onChange}
-            />
-
-            <label>
-              {("To")}
-            </label>
-            <input
-              type="date"
-              name="to"
-              value={formData.to}
-              onChange={onChange}
-            />
-          </div>
-
-          <button type="submit" disabled={loading}>
-            {("Get Data")}
-          </button>
-        </form>
-      </header>
+      <Footer />
     </div>
   );
 }
-
-export default App;
