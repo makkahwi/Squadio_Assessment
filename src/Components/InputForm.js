@@ -10,7 +10,7 @@ export default function InputForm({ formData, loading, onChange, onSubmit }) {
     <>
       <form onSubmit={onSubmit}>
         <div className="form-group my-2">
-          <label>
+          <label className="my-3">
             {("Interval")}
           </label>
 
@@ -28,15 +28,11 @@ export default function InputForm({ formData, loading, onChange, onSubmit }) {
         </div>
 
         <div className="row my-2">
-          <label>
+          <label className="my-3">
             {("Date Range")}
           </label>
 
-          <div className="col">
-            <label>
-              {("From")}
-            </label>
-
+          <div className="input-group">
             <input
               type="date"
               max={new Date().toLocaleDateString("en-CA")}
@@ -46,12 +42,6 @@ export default function InputForm({ formData, loading, onChange, onSubmit }) {
               onChange={onChange}
               className="form-control"
             />
-          </div>
-
-          <div className="col">
-            <label>
-              {("To")}
-            </label>
 
             <input
               type="date"
@@ -65,7 +55,7 @@ export default function InputForm({ formData, loading, onChange, onSubmit }) {
           </div>
         </div>
 
-        <button type="submit" disabled={loading} className="btn btn-success my-2 w-100">
+        <button type="submit" disabled={loading} className="btn btn-success my-3 w-100">
           {("Get Data")}
         </button>
       </form>
