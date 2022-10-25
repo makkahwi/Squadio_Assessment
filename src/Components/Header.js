@@ -7,8 +7,26 @@ export default function Header() {
           {("Yahoo Finance Data")}
         </h5>
 
-        <div className="collapse navbar-collapse mx-4">
-          <div className="row align-items-center my-2">
+        <button className="navbar-toggler mx-4" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto mx-4">
+            <li className="nav-item active">
+              <a className="nav-link" href="#">
+                {("Home")}
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                {("About")}
+              </a>
+            </li>
+          </ul>
+
+          <div className="row align-items-center my-2 float-end">
             <div className="col-8">
               <input
                 className="form-control w-100"
