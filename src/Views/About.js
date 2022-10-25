@@ -53,6 +53,11 @@ export default function About() {
               <ul className="list-group bg-success">
                 {requirements.map(({ text, link }, i) => (
                   <li key={i} className="list-group-item list-group-item-action bg-success text-white d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      checked={true}
+                      className="mx-2"
+                    />
                     {text}
 
                     {link && (
