@@ -56,18 +56,18 @@ export default function App() {
   ];
 
   const options = {
-    chart: {
-      type: "candlestick"
-    },
-    xaxis: {
-      type: "category",
-      //tickPlacement: "between",
-    },
-    yaxis: {
-      legend: {
-        title: "dan"
-      }
-    },
+    // chart: {
+    //   type: "candlestick"
+    // },
+    // xaxis: {
+    //   type: "category",
+    //   //tickPlacement: "between",
+    // },
+    // yaxis: {
+    //   legend: {
+    //     title: "dan"
+    //   }
+    // },
   };
 
   return (
