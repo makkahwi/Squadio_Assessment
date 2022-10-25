@@ -46,15 +46,16 @@ export default function App() {
   };
 
   return (
-    <div className="text-center min-vh-100">
+    <div className="bg-light text-center min-vh-100">
       <Header />
 
-      <header className="bg-light d-flex justify-content-center align-items-center">
+      <body className="bg-light d-flex justify-content-center">
         <div className="col-10">
-
           <div className="row mt-5 justify-content-around">
             <div className="col-lg-5">
-              <Chart data={chartData} />
+              <Chart
+                data={chartData}
+              />
             </div>
 
             <div className="col-lg-5">
@@ -67,7 +68,7 @@ export default function App() {
             </div>
           </div>
         </div>
-      </header>
+      </body>
 
       <Footer />
     </div>
