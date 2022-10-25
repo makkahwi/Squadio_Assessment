@@ -1,11 +1,9 @@
-import axios from 'axios';
-import { useLayoutEffect, useState } from 'react';
-import './App.css';
-import logo from './logo.svg';
+import axios from "axios";
+import { useLayoutEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import chartTestData from './testData';
+import chartTestData from "./testData";
 
-function App() {
+export default function App() {
   const [chartData, setChartData] = useState(chartTestData);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ interval: "", from: "", to: "" });
@@ -63,7 +61,7 @@ function App() {
     },
     xaxis: {
       type: "category",
-      //tickPlacement: 'between',
+      //tickPlacement: "between",
     },
     yaxis: {
       legend: {
@@ -73,63 +71,87 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="text-center">
+      <header className="bg-light min-vh-100 d-flex justify-content-center align-items-center">
+        <div className="col-10">
+          <h4 className="my-5">
+            {("Yahoo Finance Data")}
+          </h4>
 
-        <ReactApexChart
-          options={options}
-          series={series}
-          type="candlestick"
-          height={350}
-        />
+          <div className="row mt-5 justify-content-around">
+            <div className="col-lg-5">
+              <ReactApexChart
+                options={options}
+                series={series}
+                type="candlestick"
+                height={350}
+              />
+            </div>
 
-        <form onSubmit={onSubmit}>
-          <div>
-            <label>
-              {("Interval")}
-            </label>
+            <div className="col-lg-5">
+              <form onSubmit={onSubmit}>
+                <div className="form-group my-2">
+                  <label>
+                    {("Interval")}
+                  </label>
 
-            <select name="interval" value={formData.interval} onChange={onChange}>
-              {intervalOptions.map(({ value, label }, i) => (
-                <option key={i} value={value} label={label} />
-              ))}
-            </select>
+                  <select
+                    name="interval"
+                    placeholder="Interval"
+                    value={formData.interval}
+                    onChange={onChange}
+                    className="form-control"
+                  >
+                    {intervalOptions.map(({ value, label }, i) => (
+                      <option key={i} value={value} label={label} />
+                    ))}
+                  </select>
+                </div>
+
+                <div className="row my-2">
+                  <label>
+                    {("Date Range")}
+                  </label>
+
+                  <div className="col">
+                    <label>
+                      {("From")}
+                    </label>
+
+                    <input
+                      type="date"
+                      name="from"
+                      placeholder="From"
+                      value={formData.from}
+                      onChange={onChange}
+                      className="form-control"
+                    />
+                  </div>
+
+                  <div className="col">
+                    <label>
+                      {("To")}
+                    </label>
+
+                    <input
+                      type="date"
+                      name="to"
+                      placeholder="To"
+                      value={formData.to}
+                      onChange={onChange}
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" disabled={loading} className="btn btn-success my-2 w-100">
+                  {("Get Data")}
+                </button>
+              </form>
+            </div>
           </div>
-
-          <div>
-            <label>
-              {("Date Range")}
-            </label>
-
-            <label>
-              {("From")}
-            </label>
-            <input
-              type="date"
-              name="from"
-              value={formData.from}
-              onChange={onChange}
-            />
-
-            <label>
-              {("To")}
-            </label>
-            <input
-              type="date"
-              name="to"
-              value={formData.to}
-              onChange={onChange}
-            />
-          </div>
-
-          <button type="submit" disabled={loading}>
-            {("Get Data")}
-          </button>
-        </form>
+        </div>
       </header>
     </div>
   );
 }
-
-export default App;
