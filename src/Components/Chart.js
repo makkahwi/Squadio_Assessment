@@ -19,7 +19,7 @@ export default function Chart({ data }) {
   const series = [
     {
       name: "candle",
-      data: data
+      data: data.sort((a, b) => a.x - b.x).map(rec => ({ ...rec, x: rec.x.toLocaleDateString("en-GB") }))
     }
   ];
 
