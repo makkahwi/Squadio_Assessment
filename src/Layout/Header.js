@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -14,15 +15,15 @@ export default function Header() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto mx-4">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <Link to="" className="nav-link" >
                 {("Home")}
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="about" className="nav-link" >
                 {("About")}
-              </a>
+              </Link>
             </li>
           </ul>
 

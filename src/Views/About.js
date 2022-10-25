@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useLayoutEffect, useState } from "react";
-import Chart from "./Components/Chart";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import InputForm from "./Components/InputForm";
-import chartTestData from "./testData";
+
+import Chart from "../Components/Chart";
+import InputForm from "../Components/InputForm";
+import chartTestData from "../testData";
 
 export default function About() {
   const [chartData, setChartData] = useState(chartTestData);
@@ -47,8 +46,6 @@ export default function About() {
 
   return (
     <div className="bg-light text-center min-vh-100">
-      <Header />
-
       <div className="bg-light d-flex justify-content-center">
         <div className="col-10">
           <div className="row mt-5 justify-content-around">
@@ -69,8 +66,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
