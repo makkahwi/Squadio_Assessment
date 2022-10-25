@@ -15,9 +15,10 @@ export default function About() {
 
   const notes = [
     { title: "Chart Library (Apexcharts)", details: "It was picked as it simply met the criteria required and offered couple of user helpful tools like zooming in and out." },
-    { title: "Given Yahoo API URL", details: "It's not working with React.js, seems for some reason that service provider barred using the API call with development environments like http://localhost:1234. So a fixed sample data was picker just to confirm the chart functionality." },
+    { title: "Given Yahoo API URL", details: "It's not working with React.js, seems for some reason that service provider barred using the API call with development environments like http://localhost:1234. So a fixed sample data was picked just to confirm the chart functionality." },
     { title: "Yahoo API Error Msg", details: "Access to XMLHttpRequest at 'https://query1.finance.yahoo.com/v7/finance/download/SPUS?period1=&period2=&interval=&events=history' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource." },
-    { title: "Involved libraries in the app", details: "apexcharts, axios, bootstrap, react, react-router-dom" },
+    { title: "Involved Libraries", details: "apexcharts, axios, bootstrap, react, react-router-dom" },
+    { title: "Possible Enhancements", details: "localization (i18n), allow user to type down the endpoint and spacify the params to send (postman simulation with better UI)" },
   ];
 
   return (
