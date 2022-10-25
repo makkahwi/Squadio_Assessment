@@ -71,12 +71,31 @@ export default function App() {
   };
 
   return (
-    <div className="text-center">
-      <header className="bg-light min-vh-100 d-flex justify-content-center align-items-center">
+    <div className="text-center min-vh-100">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+        <h5 className="my-3 navbar-brand mx-4">
+          {("Yahoo Finance Data")}
+        </h5>
+
+        <div className="collapse navbar-collapse mx-4">
+          <div className="row align-items-center my-2">
+            <div className="col-8">
+              <input
+                className="form-control w-100"
+                type="search"
+                placeholder="Search"
+              />
+            </div>
+
+            <div className="col-4">
+              <button className="btn btn-outline-light w-100" type="button">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header className="bg-light d-flex justify-content-center align-items-center">
         <div className="col-10">
-          <h4 className="my-5">
-            {("Yahoo Finance Data")}
-          </h4>
 
           <div className="row mt-5 justify-content-around">
             <div className="col-lg-5">
@@ -152,6 +171,13 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      <footer className="bg-dark text-center text-white position-absolute bottom-0 w-100">
+        <div className="text-center p-3">
+          {new Date().getFullYear()} {("Copyright © ")}
+          <a className="text-white" href="https://suahib.dev" target="_blank" rel="noreferrer">Suhaib Ahmad</a>
+        </div>
+      </footer>
     </div>
   );
 }
