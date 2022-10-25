@@ -31,8 +31,8 @@ Notes:
   - Responsivness
   - Styling                 DONE
 - Turn Into Multi-Page App
-  - React-Router-Dom
-  - Layout Files
-  - Header Nav
+  - React-Router-Dom        DONE
+  - Layout Files            DONE
+  - Header Nav              DONE
 - Include Task Description & Checklist in UI (About Page)
 - Include Chart Pickup Reason in Description
