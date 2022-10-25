@@ -39,6 +39,7 @@ export default function InputForm({ formData, loading, onChange, onSubmit }) {
 
             <input
               type="date"
+              max={new Date().toLocaleDateString("en-CA")}
               name="from"
               placeholder="From"
               value={formData.from}
@@ -54,6 +55,7 @@ export default function InputForm({ formData, loading, onChange, onSubmit }) {
 
             <input
               type="date"
+              max={new Date().toLocaleDateString("en-CA")}
               name="to"
               placeholder="To"
               value={formData.to}
