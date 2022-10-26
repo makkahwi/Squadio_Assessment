@@ -12,25 +12,21 @@ export default function Header() {
           {("Yahoo Finance Data")}
         </h5>
 
-        <button className="navbar-toggler mx-4" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <ul className="navbar-nav mr-auto mx-4">
+          <li className="nav-item">
+            <Link to="" className={`nav-link ${pathname === "/" && "text-white active"}`} >
+              {("Home")}
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to="about" className={`nav-link ${pathname === "/about" && "text-white active"}`} >
+              {("About")}
+            </Link>
+          </li>
+        </ul>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto mx-4">
-            <li className="nav-item active">
-              <Link to="" className={`nav-link ${pathname === "" && "text-danger"}`} >
-                {("Home")}
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link to="about" className={`nav-link ${pathname === "about" && "text-danger"}`} >
-                {("About")}
-              </Link>
-            </li>
-          </ul>
-
           <div className="row align-items-center my-2 float-end">
             <div className="col-8">
               <input
