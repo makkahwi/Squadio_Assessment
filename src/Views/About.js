@@ -80,7 +80,7 @@ export default function About() {
 
               <ul className="list-group">
                 {notes.map(({ title, details }, i) => (
-                  <li key={i} className="list-group-item list-group-item-action d-flex align-items-center">
+                  <li key={i} className="list-group-item list-group-item-action d-flex align-items-center overflow-auto">
                     <span>
                       <b>
                         {title}
