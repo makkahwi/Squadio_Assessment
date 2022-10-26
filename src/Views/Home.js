@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useLayoutEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Chart from "../Components/Chart";
 import InputForm from "../Components/InputForm";
@@ -53,7 +54,9 @@ export default function Home() {
               {("Illustration of User Inputs")}
               <br />
               <small className="text-danger text-xs">
-                {("As API URL isn't working, please check the about page for details")}
+                <Link to="about">
+                  {("As API URL isn't working, please check the about page for details")}
+                </Link>
               </small>
             </p>
 
