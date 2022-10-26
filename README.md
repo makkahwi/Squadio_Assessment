@@ -23,11 +23,11 @@ Notes:
 - Build CandleStick Chart               DONE
 - Deploy To Vercel                      DONE
 - Fix API Data Call                     TURNED AROUND
-- Fix UI
+- Fix UI                                DONE
   - Header                              DONE
   - Project Title                       DONE
   - Body Split To Columns               DONE
-  - Responsivness
+  - Responsivness                       DONE
   - Styling                             DONE
 - Turn Into Multi-Page App              DONE
   - React-Router-Dom                    DONE
