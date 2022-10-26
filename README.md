@@ -15,7 +15,6 @@ Notes:
 
 - Make a github repository has the task
 - Make sure your commits are descriptive and has small changes
-- <https://blog.apilayer.com/yahoo-finance-api-is-discontinued-here-is-your-top-10-yahoo-finance-api-alternatives/>
 
 ## TODO List
 
