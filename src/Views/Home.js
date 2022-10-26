@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useLayoutEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Chart from "../Components/Chart";
 import InputForm from "../Components/InputForm";
@@ -45,15 +46,17 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-light text-center min-vh-75 d-flex justify-content-center py-5 mt-3">
+    <div className="bg-light text-center min-vh-100 d-flex justify-content-center py-5 mt-3">
       <div className="col-10">
         <div className="row mt-5 justify-content-around">
-          <div className="col-lg-10 pb-4">
+          <div className="col-lg-10 py-5">
             <p>
               {("Illustration of User Inputs")}
               <br />
               <small className="text-danger text-xs">
-                {("As API URL isn't working, please check the about page for details")}
+                <Link to="about">
+                  {("As API URL isn't working, please check the about page for details")}
+                </Link>
               </small>
             </p>
 

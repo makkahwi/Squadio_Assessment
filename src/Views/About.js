@@ -15,15 +15,15 @@ export default function About() {
 
   const notes = [
     { title: "Chart Library (Apexcharts)", details: "It was picked as it simply met the criteria required and offered couple of user helpful tools like zooming in and out." },
-    { title: "Given Yahoo API URL", details: "It's not working with React.js, seems for some reason that service provider barred using the API call with development environments like http://localhost:1234. So a fixed sample data was picked just to confirm the chart functionality." },
-    { title: "Yahoo API Error Msg", details: "Access to XMLHttpRequest at 'https://query1.finance.yahoo.com/v7/finance/download/SPUS?period1=&period2=&interval=&events=history' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource." },
     { title: "Involved Libraries", details: "apexcharts, axios, bootstrap, react, react-router-dom" },
-    { title: "Possible Enhancements", details: "localization (i18n), allow user to type down the endpoint and spacify the params to send (postman simulation with better UI)" },
+    { title: "Possible Enhancements", details: "localization (i18n), allow user to type down the endpoint and spacify the params to send (postman simulation with better UI), include a choice of multiple chart types, include more user friendly input tools like range picker" },
+    { title: "Given Yahoo API URL", details: "It's not working with React.js, seems for some reason that service provider barred using the API call with development environments like http://localhost:1234. Even upon deployment to Vercel, the API isn't working n returns a network error. So a fixed sample data was picked just to confirm the chart functionality." },
+    { title: "Yahoo API Error Msg", details: "Access to XMLHttpRequest at 'https://query1.finance.yahoo.com/v7/finance/download/SPUS?period1=&period2=&interval=&events=history' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource." },
   ];
 
   return (
     <>
-      <div className="p-5 mb-4 bg-light rounded-3 mt-5">
+      <div className="p-5 bg-light rounded-3 mt-5">
         <div className="container-fluid py-5">
           <h1 className="display-6 fw-bold">
             {("Yahoo Finance Data")}
@@ -96,6 +96,24 @@ export default function About() {
                     </span>
                   </li>
                 ))}
+
+                <li className="list-group-item list-group-item-action d-flex align-items-center">
+                  <span>
+                    <b>
+                      {("Yahoo API Shutdown")}
+                    </b>
+
+                    <br />
+
+                    <span className="mx-2">
+                      {("According to the following resource, Yahoo API service has been shutdown. Maybe that's true n that's way it isn't working")}
+
+                      <a className="btn btn-ghost mx-1" href="https://blog.apilayer.com/yahoo-finance-api-is-discontinued-here-is-your-top-10-yahoo-finance-api-alternatives/" target="_blank" rel="noreferrer">
+                        {("Link")}
+                      </a>
+                    </span>
+                  </span>
+                </li>
               </ul>
 
               <a href="https://github.com/makkahwi/Squadio_Assessment" target="_blank" rel="noreferrer" className="btn btn-outline-success my-2" type="button">
